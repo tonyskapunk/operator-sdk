@@ -13,13 +13,17 @@ function load_image_if_kind() {
   fi
 }
 
-set -eu
+set -xeu
 
 header_text "Running ansible molecule tests in a python3 virtual environment"
 
 # Set up a python3.8 virtual environment.
 ENVDIR="$(mktemp -d)"
 trap_add "set +u; deactivate; set -u; rm -rf $ENVDIR" EXIT
+echo ===
+which python3
+echo ${PATH}
+echo ===
 python3 -m venv "$ENVDIR"
 set +u; source "${ENVDIR}/bin/activate"; set -u
 

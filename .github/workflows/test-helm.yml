@@ -1,6 +1,8 @@
 name: helm
 on:
   pull_request: {}
+  branches:
+    - "none"
 
 jobs:
   check_docs_only:

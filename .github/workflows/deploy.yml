@@ -3,12 +3,12 @@ name: deploy
 on:
   push:
     branches:
-    - '**'
+    - 'none'
     tags:
     - 'v*'
     - 'scorecard-kuttl/v*'
   pull_request:
-    branches: [ master ]
+    branches: [ none ]
 
 jobs:
   check_docs_only:
